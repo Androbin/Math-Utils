@@ -31,16 +31,6 @@ public final class FloatArrayMathUtil
 		return a == null ? b : b == null ? a : fillParallel( new float[ Math.min( a.length, b.length ) ], i -> avg( a[ i ], b[ i ], c ) );
 	}
 	
-	public static float[] cross3( final float[] a, final float[] b )
-	{
-		return new float[]
-		{
-				a[ 1 ] * b[ 2 ] - a[ 2 ] * b[ 1 ],
-				a[ 2 ] * b[ 0 ] - a[ 0 ] * b[ 2 ],
-				a[ 0 ] * b[ 1 ] - a[ 1 ] * b[ 0 ],
-		};
-	}
-	
 	public static float[] interpolateAll( final float[] v1, final float p, final float[] v2 )
 	{
 		return fillParallel( new float[ Math.min( v1.length, v2.length ) ], i -> interpolate( v1[ i ], p, v2[ i ] ) );
@@ -73,16 +63,6 @@ public final class FloatArrayMathUtil
 		}
 		
 		return values;
-	}
-	
-	public static float phi( final float[] a, final float[] b )
-	{
-		return (float) Math.acos( scalar( a, b ) / ( abs( a ) * abs( b ) ) );
-	}
-	
-	public static float scalar( final float[] a, final float[] b )
-	{
-		return add( Math.min( a.length, b.length ), i -> a[ i ] * b[ i ] );
 	}
 	
 	public static float[] subAll( final float[] a, final float[] b )
