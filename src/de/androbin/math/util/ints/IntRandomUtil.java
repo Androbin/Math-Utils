@@ -11,11 +11,16 @@ public final class IntRandomUtil
 	
 	public static int[] random( final Random random, final int m, final int n, final int ... e )
 	{
+		if ( random == null )
+		{
+			return random( ThreadLocalRandom.current(), m, n, e );
+		}
+		
 		final int[] r = new int[ n ];
 		
 		for ( int i = 0; i < n; i++ )
 		{
-			r[ i ] = ( random == null ? ThreadLocalRandom.current() : random ).nextInt( m - e.length - i );
+			r[ i ] = random.nextInt( m - e.length - i );
 			
 			for ( int j = 0; j < i; j++ )
 			{
