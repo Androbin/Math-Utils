@@ -16,6 +16,8 @@ public final class IntRandomUtil
 			return random( ThreadLocalRandom.current(), m, n, e );
 		}
 		
+		Arrays.sort( e );
+		
 		final int[] r = new int[ n ];
 		
 		for ( int i = 0; i < n; i++ )
