@@ -30,16 +30,6 @@ public final class DoubleArrayMathUtil
 		return a == null ? b : b == null ? a : fillParallel( new double[ Math.min( a.length, b.length ) ], i -> avg( a[ i ], b[ i ], c ) );
 	}
 	
-	public static double[] cross3( final double[] a, final double[] b )
-	{
-		return new double[]
-		{
-				a[ 1 ] * b[ 2 ] - a[ 2 ] * b[ 1 ],
-				a[ 2 ] * b[ 0 ] - a[ 0 ] * b[ 2 ],
-				a[ 0 ] * b[ 1 ] - a[ 1 ] * b[ 0 ],
-		};
-	}
-	
 	public static double[] interpolateAll( final double[] v1, final double p, final double[] v2 )
 	{
 		return fillParallel( new double[ Math.min( v1.length, v2.length ) ], i -> interpolate( v1[ i ], p, v2[ i ] ) );
@@ -72,16 +62,6 @@ public final class DoubleArrayMathUtil
 		}
 		
 		return values;
-	}
-	
-	public static double phi( final double[] a, final double[] b )
-	{
-		return Math.acos( scalar( a, b ) / ( abs( a ) * abs( b ) ) );
-	}
-	
-	public static double scalar( final double[] a, final double[] b )
-	{
-		return addParallel( Math.min( a.length, b.length ), i -> a[ i ] * b[ i ] );
 	}
 	
 	public static double[] subAll( final double[] a, final double[] b )
