@@ -31,13 +31,13 @@ public final class IntRandomUtil
 			}
 		}
 		
-		for ( int i = 0; i < e.length; i++ )
+		for ( int i = 0; i < n; i++ )
 		{
-			for ( int j = 0; j < n; j++ )
+			for ( int j = 0; j < e.length; j++ )
 			{
-				if ( r[ j ] >= e[ i ] )
+				if ( r[ i ] >= e[ j ] )
 				{
-					r[ j ]++;
+					r[ i ]++;
 				}
 			}
 		}
