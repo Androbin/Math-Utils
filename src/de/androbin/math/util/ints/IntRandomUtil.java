@@ -35,12 +35,9 @@ public final class IntRandomUtil
 		
 		for ( int i = 0; i < n; i++ )
 		{
-			for ( int j = 0; j < e.length; j++ )
+			for ( int j = 0; j < e.length && r[ i ] >= e[ j ]; j++ )
 			{
-				if ( r[ i ] >= e[ j ] )
-				{
-					r[ i ]++;
-				}
+				r[ i ]++;
 			}
 		}
 		
