@@ -8,8 +8,8 @@ public final class IntArrayMathUtil {
   }
   
   public static int[] addAll( final int[] a, final int[] b ) {
-    return a == null ? b
-        : b == null ? a : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? b : b == null ? a
+        : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
   
   public static int[] negAll( final int[] values ) {
@@ -17,7 +17,7 @@ public final class IntArrayMathUtil {
   }
   
   public static int[] subAll( final int[] a, final int[] b ) {
-    return a == null ? negAll( b )
-        : b == null ? a : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? negAll( b ) : b == null ? a
+        : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
 }

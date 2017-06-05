@@ -8,8 +8,8 @@ public final class LongArrayMathUtil {
   }
   
   public static long[] addAll( final long[] a, final long[] b ) {
-    return a == null ? b
-        : b == null ? a : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? b : b == null ? a
+        : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
   
   public static long[] negAll( final long[] values ) {
@@ -17,7 +17,7 @@ public final class LongArrayMathUtil {
   }
   
   public static long[] subAll( final long[] a, final long[] b ) {
-    return a == null ? negAll( b )
-        : b == null ? a : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? negAll( b ) : b == null ? a
+        : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
 }

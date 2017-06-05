@@ -17,15 +17,14 @@ public final class DoubleArrayMathUtil {
   }
   
   public static double[] addAll( final double[] a, final double[] b ) {
-    return a == null ? b
-        : b == null ? a : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? b : b == null ? a
+        : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
   
   public static double[] avgAll( final double[] a, final double[] b, final double c ) {
-    return a == null ? b
-        : b == null ? a
-            : fillParallel( new double[ Math.min( a.length, b.length ) ],
-                i -> avg( a[ i ], b[ i ], c ) );
+    return a == null ? b : b == null ? a
+        : fillParallel( new double[ Math.min( a.length, b.length ) ],
+            i -> avg( a[ i ], b[ i ], c ) );
   }
   
   public static double[] interAll( final double[] v1, final double p, final double[] v2 ) {
@@ -58,7 +57,7 @@ public final class DoubleArrayMathUtil {
   }
   
   public static double[] subAll( final double[] a, final double[] b ) {
-    return a == null ? negAll( b )
-        : b == null ? a : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? negAll( b ) : b == null ? a
+        : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
 }

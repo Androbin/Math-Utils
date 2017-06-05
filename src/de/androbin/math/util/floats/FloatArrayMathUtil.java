@@ -18,15 +18,14 @@ public final class FloatArrayMathUtil {
   }
   
   public static float[] addAll( final float[] a, final float[] b ) {
-    return a == null ? b
-        : b == null ? a : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? b : b == null ? a
+        : addAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
   
   public static float[] avgAll( final float[] a, final float[] b, final float c ) {
-    return a == null ? b
-        : b == null ? a
-            : fillParallel( new float[ Math.min( a.length, b.length ) ],
-                i -> avg( a[ i ], b[ i ], c ) );
+    return a == null ? b : b == null ? a
+        : fillParallel( new float[ Math.min( a.length, b.length ) ],
+            i -> avg( a[ i ], b[ i ], c ) );
   }
   
   public static float[] interAll( final float[] v1, final float p, final float[] v2 ) {
@@ -59,7 +58,7 @@ public final class FloatArrayMathUtil {
   }
   
   public static float[] subAll( final float[] a, final float[] b ) {
-    return a == null ? negateAll( b )
-        : b == null ? a : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
+    return a == null ? negateAll( b ) : b == null ? a
+        : subAllParallel( Math.min( a.length, b.length ), func( a ), func( b ) );
   }
 }
