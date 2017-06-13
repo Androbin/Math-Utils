@@ -1,7 +1,7 @@
 package de.androbin.math.util.floats;
 
 import static de.androbin.collection.util.FloatCollectionUtil.*;
-import de.androbin.function.*;
+import de.androbin.func.*;
 
 public final class FloatFunctionConcurrentMathUtil {
   private FloatFunctionConcurrentMathUtil() {
